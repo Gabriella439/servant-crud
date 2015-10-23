@@ -1,0 +1,60 @@
+Name: servant-crud
+Version: 1.0.0
+Cabal-Version: >=1.10
+Build-Type: Simple
+License: BSD3
+License-File: LICENSE
+Copyright: 2015 Gabriel Gonzalez
+Author: Gabriel Gonzalez
+Maintainer: Gabriel439@gmail.com
+Bug-Reports: https://github.com/Gabriel439/servant-crud/issues
+Synopsis: Servant CRUD example
+Description: This is a basic example of how to use `servant` to write a
+    CRUD (create-read-update-delete) service.  In this case the web server
+    provides a REST interface for creating, reading, updating, and deleting
+    local files.
+    .
+    Needless to say, this service is not safe to publicly expose.  This is for
+    tutorial purposes only.
+Category: Web
+Source-Repository head
+    Type: git
+    Location: https://github.com/Gabriel439/servant-crud
+
+Library
+    HS-Source-Dirs: src
+    Build-Depends:
+        base           >= 4.5 && < 5  ,
+        text                     < 1.3,
+        servant-server >= 0.4 && < 0.5
+    Exposed-Modules: Servant.Crud
+    GHC-Options: -O2 -Wall
+    Default-Language: Haskell2010
+
+Executable crud-server
+    Hs-Source-Dirs: exec
+    Main-Is: Server.hs
+    Build-Depends:
+        base           >= 4.5     && < 5  ,
+        directory                    < 1.3,
+        servant-crud                      ,
+        servant-server >= 0.4     && < 0.5,
+        text                         < 1.3,
+        transformers   >= 0.2.0.0 && < 0.5,
+        warp           >= 3.1     && < 3.2
+    GHC-Options: -O2 -Wall
+    Default-Language: Haskell2010
+
+Executable crud-client
+    Hs-Source-Dirs: exec
+    Main-Is: Client.hs
+    Build-Depends:
+        base           >= 4.5     && < 5  ,
+        either                       < 4.5,
+        servant-client >= 0.4     && < 0.5,
+        servant-crud                      ,
+        servant-server >= 0.4     && < 0.5,
+        text                         < 1.3,
+        transformers   >= 0.2.0.0 && < 0.5
+    Ghc-Options: -O2 -Wall
+    Default-Language: Haskell2010
