@@ -13,16 +13,16 @@ To install this:
 * Run `stack install`
 
 This will create two executables named `crud-client` and `crud-server` under
-`~/.local/bin`.  You can then launch the server by running:
+`~/.local/bin`.  You can then launch the server on port 8080 by running:
 
 ```bash
-$ ~/.local/bin/crud-server
+$ ~/.local/bin/crud-server 8080
 ```
 
 ... and then you can launch the client in a separate session by running:
 
 ```bash
-$ ~/.local/bin/crud-client
+$ ~/.local/bin/crud-client 8080
 Hello, world!
 ```
 

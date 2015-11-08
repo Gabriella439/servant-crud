@@ -41,6 +41,7 @@ Executable crud-server
         servant-server >= 0.4     && < 0.5,
         text                         < 1.3,
         transformers   >= 0.2.0.0 && < 0.5,
+        turtle         >= 1.2.0   && < 1.3,
         warp           >= 3.1     && < 3.2
     GHC-Options: -O2 -Wall
     Default-Language: Haskell2010
@@ -55,6 +56,7 @@ Executable crud-client
         servant-crud                      ,
         servant-server >= 0.4     && < 0.5,
         text                         < 1.3,
-        transformers   >= 0.2.0.0 && < 0.5
+        transformers   >= 0.2.0.0 && < 0.5,
+        turtle         >= 1.2.0   && < 1.3
     Ghc-Options: -O2 -Wall
     Default-Language: Haskell2010

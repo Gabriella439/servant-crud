@@ -1,7 +1,10 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 import Control.Monad.IO.Class (liftIO)
 import Servant (Proxy(..), (:<|>)(..))
 import Servant.Crud (API, DeleteFile, GetFile, PutFile)
 import Servant.Server (Server, serve)
+import Turtle (argInt, options)
 
 import qualified Data.Text.IO             as Text
 import qualified Network.Wai.Handler.Warp as Warp
@@ -27,4 +30,6 @@ server = putFile
 
 -- | Serve the `API` on port 8080
 main :: IO ()
-main = Warp.run 8080 (serve (Proxy :: Proxy API) server)
+main = do
+    port <- options "CRUD server" (argInt "port" "The port to listen on")
+    Warp.run port (serve (Proxy :: Proxy API) server)
