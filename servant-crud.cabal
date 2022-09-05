@@ -4,10 +4,10 @@ Cabal-Version: >=1.10
 Build-Type: Simple
 License: BSD3
 License-File: LICENSE
-Copyright: 2015 Gabriel Gonzalez
-Author: Gabriel Gonzalez
-Maintainer: Gabriel439@gmail.com
-Bug-Reports: https://github.com/Gabriel439/servant-crud/issues
+Copyright: 2015 Gabriella Gonzalez
+Author: Gabriella Gonzalez
+Maintainer: GenuineGabriella@gmail.com
+Bug-Reports: https://github.com/Gabriella439/servant-crud/issues
 Synopsis: Servant CRUD example
 Description: This is a basic example of how to use `servant` to write a
     CRUD (create-read-update-delete) service.  In this case the web server
@@ -19,7 +19,7 @@ Description: This is a basic example of how to use `servant` to write a
 Category: Web
 Source-Repository head
     Type: git
-    Location: https://github.com/Gabriel439/servant-crud
+    Location: https://github.com/Gabriella439/servant-crud
 
 Library
     HS-Source-Dirs: src
